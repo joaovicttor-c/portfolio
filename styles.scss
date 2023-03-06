@@ -12,6 +12,7 @@
 
   --hue: 94;
   --primary-color: hsl(var(--hue), 67%, 95%);
+  --nav-height: 7.1rem;
 }
 
 body {
@@ -22,7 +23,14 @@ body {
 }
 
 nav {
-  background-color: #fff;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  padding-block: 1rem;
+}
+
+.scroll {
+  background-color: white;
 }
 
 img {
@@ -36,10 +44,14 @@ img {
   padding-inline: 3.2rem;
 }
 
-.navigation {
+.navigation .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.navigation {
+
 
   &-logo {
     width: 7rem;
@@ -51,6 +63,8 @@ img {
 }
 
 .home {
+
+  margin-top: calc(4rem + var(--nav-height));
 
   &-ilustracao {
     width: 36.5rem; 

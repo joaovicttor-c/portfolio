@@ -10,6 +10,7 @@
   font-size: 62.5%;
   --hue: 94;
   --primary-color: hsl(var(--hue), 67%, 95%);
+  --nav-height: 7.1rem;
 }
 
 body {
@@ -19,7 +20,16 @@ body {
 }
 
 nav {
-  background-color: #fff;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  padding-block: 1rem;
+}
+
+.scroll {
+background: rgba(255, 255, 255, 60%);
+backdrop-filter: blur(7px);
+-webkit-backdrop-filter: blur(7px);
 }
 
 img {
@@ -32,11 +42,12 @@ img {
   padding-inline: 3.2rem;
 }
 
-.navigation {
+.navigation .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .navigation-logo {
   width: 7rem;
 }
@@ -44,6 +55,9 @@ img {
   display: none;
 }
 
+.home {
+  margin-top: calc(4rem + var(--nav-height));
+}
 .home-ilustracao {
   width: 36.5rem;
   margin: 2.5rem auto 3.5rem auto;
