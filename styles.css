@@ -8,32 +8,13 @@
 
 :root {
   font-size: 62.5%;
-  --hue: 94;
-  --primary-color: hsl(var(--hue), 67%, 95%);
-  --nav-height: 7.1rem;
+  --nav-height: 7rem;
 }
 
 body {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Josefin Slab", sans-serif;
   font-size: 1.6rem;
-  background-color: var(--primary-color);
-}
-
-nav {
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  padding-block: 1rem;
-}
-
-.scroll {
-background: rgba(255, 255, 255, 60%);
-backdrop-filter: blur(7px);
--webkit-backdrop-filter: blur(7px);
-}
-
-img {
-  max-width: 100%;
+  background-color: #F2FBEB;
 }
 
 .wrapper {
@@ -42,87 +23,171 @@ img {
   padding-inline: 3.2rem;
 }
 
-.navigation .wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+img {
+  max-width: 100%;
 }
 
-.navigation-logo {
+.scroll {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+/*---NAVIGATION------------------------------*/
+.mysite-Navigation {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: var(--nav-height);
+  top: 0;
+  z-index: 100;
+  text-align: center;
+}
+.mysite-Navigation-logo {
   width: 7rem;
 }
-.navigation-links, .navigation-social {
-  display: none;
+.mysite-Navigation-open, .mysite-Navigation-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.mysite-Navigation .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.home {
-  margin-top: calc(4rem + var(--nav-height));
+/*---MENU EXPANDED------------------------------*/
+body.menu-expanded {
+  overflow: hidden;
 }
-.home-ilustracao {
-  width: 36.5rem;
-  margin: 2.5rem auto 3.5rem auto;
+
+body.menu-expanded > :not(nav) {
+  visibility: hidden;
 }
-.home-container-header > h1 {
-  white-space: pre-line;
-  font-size: 4.2rem;
-  line-height: 110%;
-  font-weight: 400;
+
+.mysite-Navigation-menu,
+.mysite-Navigation-close,
+body.menu-expanded .mysite-Navigation-open {
+  opacity: 0;
+  visibility: hidden;
 }
-.home-container > p {
-  font-family: "Josefin Slab";
-  font-weight: 600;
-  line-height: 150%;
-  padding-block: 4rem 3rem;
+
+body.menu-expanded .mysite-Navigation-menu,
+body.menu-expanded .mysite-Navigation-close {
+  opacity: 1;
+  visibility: visible;
 }
-.home-container-buttons li:first-child > a {
-  display: block;
-  width: 100%;
-  padding-block: 1.4rem;
-  text-align: center;
-  background-color: hsl(283, 16%, 8%);
-  color: #fff;
-  border-radius: 3rem;
+
+.mysite-Navigation-menu {
+  transform: translateX(-100%);
 }
-.home-container-buttons li:last-child > a {
-  font-weight: bold;
-  color: hsl(283, 16%, 8%);
+
+body.menu-expanded .mysite-Navigation-menu {
+  top: 0;
+  left: 0;
+  background-color: #F2FBEB;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 100px;
+  transition: transform 0.5s;
+  transform: translateX(0%);
 }
-.home-container-buttons li:last-child {
+
+.mysite-Navigation-logo {
+  z-index: 100;
+}
+
+.mysite-Navigation-menu ul:nth-child(1) {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 4.8rem;
+  margin-top: 6rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+}
+
+.mysite-Navigation-menu li a {
+  color: #000;
+}
+
+.mysite-Navigation-social {
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
-  padding-top: 2.6rem;
+  gap: 3.2rem;
+  margin-top: 7rem;
 }
 
-.about-illustration {
-  display: none;
+body.menu-expanded .my-Navigation-logo,
+body.menu-expanded button {
+  position: relative;
+  z-index: 100;
 }
-.about-container {
-  margin-block: 9rem;
+
+nav .mysite-Navigation-menu,
+nav .mysite-Navigation-close {
+  position: fixed;
 }
-.about-container > h2 {
+
+/* HOME */
+.mysite-Home {
+  padding-top: calc(2.5rem + var(--nav-height));
+}
+.mysite-Home-illustration {
+  width: 36.5rem;
+  margin-inline: auto;
+}
+.mysite-Home-container {
+  margin-block: 2.5rem 9rem;
+}
+.mysite-Home-container-header > h1 {
   font-family: "Josefin Sans";
   font-weight: 400;
   font-size: 4.2rem;
   line-height: 110%;
+  white-space: pre-line;
 }
-.about-container > p {
+.mysite-Home-container > p {
+  padding-block: 4rem 3rem;
   font-family: "Josefin Slab";
   font-weight: 600;
   line-height: 150%;
-  padding-block: 2rem;
 }
-
-.projects > h2 {
+.mysite-Home-container-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.mysite-Home-container-buttons li:first-child > a {
   font-family: "Josefin Sans";
   font-weight: 400;
-  font-size: 4.1rem;
-  line-height: 150%;
+  display: block;
+  text-align: center;
+  background-color: #171219;
+  color: #fff;
+  padding-block: 1.5rem;
+  border-radius: 4rem;
+  transition: 350ms;
+}
+.mysite-Home-container-buttons li:first-child > a:hover {
+  background-color: rgba(0, 0, 0, 0.76);
+  transform: translate(0, 2px);
+}
+.mysite-Home-container-buttons li:last-child {
   text-align: center;
 }
-.projects-picture-1 {
-  width: 33.9rem;
-  margin: 4rem auto 2rem auto;
+.mysite-Home-container-buttons li:last-child > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Josefin Sans";
+  font-weight: 400;
+  color: #000;
+  transition: 350ms;
+}
+.mysite-Home-container-buttons li:last-child > a:hover {
+  color: rgba(0, 0, 0, 0.76);
+  transform: translate(0, 2px);
 }/*# sourceMappingURL=styles.css.map */
