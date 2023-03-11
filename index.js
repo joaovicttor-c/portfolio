@@ -14,11 +14,10 @@ showNavOnScroll()
 
 //------ MENU EXPANDED --------
 const body = document.querySelector(".mysite");
-
 function openMenu() {
-  body.classList.add("menu-expanded");
-}
-
-function closeMenu() {
-  body.classList.remove("menu-expanded");
-}
+  if(body.matches(".menu-expanded")) {
+    body.classList.remove("menu-expanded"); 
+   } else {
+    body.classList.add("menu-expanded");
+   };
+  }

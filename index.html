@@ -41,18 +41,14 @@
             </li>
           </ul>
       </div>
-        <button onclick="openMenu()" class="mysite-Navigation-open">
-          <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.638 0H0.581714C0.260443 0 0 0.369463 0 0.825222V1.91671C0 2.37246 0.260443 2.74194 0.581714 2.74194H17.638C17.9592 2.74194 18.2197 2.37246 18.2197 1.91671V0.825222C18.2197 0.369463 17.9592 0 17.638 0Z" fill="#171219"/>
-            <path d="M17.638 14.2581H0.581714C0.260443 14.2581 0 14.6276 0 15.0833V16.1748C0 16.6306 0.260443 17 0.581714 17H17.638C17.9592 17 18.2197 16.6306 18.2197 16.1748V15.0833C18.2197 14.6276 17.9592 14.2581 17.638 14.2581Z" fill="#171219"/>
-            <path d="M17.638 7.12903H0.581714C0.260443 7.12903 0 7.4985 0 7.95426V9.04574C0 9.5015 0.260443 9.87096 0.581714 9.87096H17.638C17.9592 9.87096 18.2197 9.5015 18.2197 9.04574V7.95426C18.2197 7.4985 17.9592 7.12903 17.638 7.12903Z" fill="#171219"/>
-          </svg>
-        </button>
-        <button onclick="closeMenu()" class="mysite-Navigation-close">
-          <svg width="39" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M29 10L10 30M10 10L30 30" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
+        <div class="mysite-Navigation-hamburger">
+          <input class="checkbox" type="checkbox" onclick="openMenu()">
+          <div class="mysite-Navigation-hamburger-rows">
+            <span class="row"></span>
+            <span class="row"></span>
+            <span class="row"></span>
+          </div>
+        </div>
    </div>
   </nav>
   <main class="mysite-Home">
