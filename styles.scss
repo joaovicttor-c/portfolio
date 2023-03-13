@@ -142,11 +142,64 @@ nav .mysite-Navigation-close {
     position: fixed;
 }
 
-/* HOME */
+/*---BUTTON ANIMATION------------------------------*/
+.mysite-Navigation-hamburger {
+  position: relative;
+  &-rows {
+    width: 2.5rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & .row {
+      display: block;
+      height: 0.3rem;
+      width: 100%;
+      border-radius: 1rem;
+      background-color: #000;
+
+    }
+    & span:first-child {
+      transform-origin: 0% 0%;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    & span:nth-child(2) {
+      transition: transform 0.2s ease-in-out;
+    }
+
+    & span:last-child {
+      transform-origin: 0% 100%;
+      transition: transform 0.4s ease-in-out;
+    }
+  }
+ & .checkbox {
+    position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      cursor: pointer;
+  }
+ & input[type="checkbox"]:checked ~ &-rows span:first-child {
+  transform: rotate(45deg);
+ } 
+ & input[type="checkbox"]:checked ~ &-rows span:nth-child(2) {
+  transform: scaleY(0);
+ }
+ & input[type="checkbox"]:checked ~ &-rows span:last-child {
+  transform: rotate(-45deg);
+ }
+}
+
+/*---HOME------------------------------*/
 .mysite-Home {
   padding-top: calc(2.5rem + var(--nav-height));
   &-illustration {
-    width: 36.5rem;
+    max-width: 36.5rem;
     margin-inline: auto;
   }
 
@@ -210,59 +263,87 @@ nav .mysite-Navigation-close {
   }
 }
 
+.mysite-About {
+  &-illustration {
+    display: none;
+  }
+  &-container {
+    margin-bottom: 15rem;
+    & > h2 {
+      font-family: 'Josefin Sans';
+      font-weight: 400;
+      font-size: 4.2rem;
+      line-height: 110%;
+    }
+    & > p {
+      font-family: 'Josefin Slab';
+      font-weight: 600;
+      line-height: 150%;
+      padding-block: 2rem;
+    }
 
+    & > h3 {
+      font-family: 'Josefin Sans';
+      font-weight: 400;
+      font-size: 1.8rem;
+      line-height: 110%;
+    }
+  }
+}
 
-/*menu test*/
-.mysite-Navigation-hamburger {
-  position: relative;
-  &-rows {
-    // z-index: 2;
-    // display: block;
-    width: 2.5rem;
-    height: 2rem;
+.mysite-Works {
+  & h2 {
+    font-family: 'Josefin Sans';
+    font-weight: 400;
+    font-size: 4.1rem;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &-links {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    & .row {
-      display: block;
-      height: 0.3rem;
-      width: 100%;
-      border-radius: 1rem;
-      background-color: #000;
-
-    }
-    & span:first-child {
-      transform-origin: 0% 0%;
-      transition: transform 0.4s ease-in-out;
-    }
-
-    & span:nth-child(2) {
-      transition: transform 0.2s ease-in-out;
-    }
-
-    & span:last-child {
-      transform-origin: 0% 100%;
-      transition: transform 0.4s ease-in-out;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+    &-img {
+      width: 21.5rem;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      & > a {
+        cursor: pointer;
+        display: block;
+        font-family: 'Josefin Sans';
+        position: absolute;
+        bottom: 0;
+        padding: 1rem 2rem;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 3rem;
+        font-weight: 700;
+        font-size: 1.4rem;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      & > img {
+        transition: transform .3s;
+        transition-timing-function: ease-in-out;
+      }
+      &:hover > img {
+        transform: scale(1.2);
+      }
+      &:hover > a {
+        opacity: 1;
+        bottom: .4rem;
+      }
     }
   }
- & .checkbox {
-    position: absolute;
-      display: block;
-      width: 100%;
-      height: 100%;
-      z-index: 5;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      cursor: pointer;
+
+  &-photos {
+    width: 28.6rem;
+    margin: auto;
   }
- & input[type="checkbox"]:checked ~ &-rows span:first-child {
-  transform: rotate(45deg);
- } 
- & input[type="checkbox"]:checked ~ &-rows span:nth-child(2) {
-  transform: scaleY(0);
- }
- & input[type="checkbox"]:checked ~ &-rows span:last-child {
-  transform: rotate(-45deg);
- }
 }
