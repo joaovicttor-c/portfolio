@@ -11,6 +11,10 @@
   --nav-height: 7rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Josefin Slab", sans-serif;
   font-size: 1.6rem;
@@ -282,7 +286,7 @@ nav .mysite-Navigation-close {
   gap: 0.5rem;
 }
 .mysite-Works-links-img {
-  width: 21.5rem;
+  width: 50rem;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -305,11 +309,12 @@ nav .mysite-Navigation-close {
   transition: all 0.3s ease;
 }
 .mysite-Works-links-img > img {
-  transition: transform 0.3s;
-  transition-timing-function: ease-in-out;
+  transition: transform 0.5s, filter 1s ease-in-out;
+  filter: grayscale(100%);
 }
 .mysite-Works-links-img:hover > img {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  filter: grayscale(0%);
 }
 .mysite-Works-links-img:hover > a {
   opacity: 1;
@@ -318,4 +323,29 @@ nav .mysite-Navigation-close {
 .mysite-Works-photos {
   width: 28.6rem;
   margin: auto;
+}
+
+.mysite-Home-container-header > h1:after {
+  content: "";
+  display: inline-block;
+  background-color: black;
+  margin-left: 2px;
+  height: 25px;
+  width: 3px;
+  animation: cursor 0.5s infinite;
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }/*# sourceMappingURL=styles.css.map */
