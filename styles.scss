@@ -89,6 +89,15 @@ img {
 
     font-size: 2.4rem;
     line-height: 3.1rem;
+    
+    & li a {
+      display: inline-block;
+      transition: 350ms;
+    }
+    & li a:hover {
+      color: rgba(0,0,0,.76);
+      transform: translate(0,2px);
+    }
   }
   & li a {
     color: var(--secondary-color);
@@ -376,12 +385,15 @@ img {
 }
 .mysite-Navigation-menu {
   all: initial;
+  width: 75%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   & > ul:nth-child(1) {
     flex-direction: row;
     font-size: 1.6rem;
     margin: 0;
+    gap: 1.8rem;
   }
 }
 .mysite-Navigation-social {
@@ -408,6 +420,92 @@ img {
     max-width: 26.5rem;
   }
 }
-  }
 
-  
+  }
+  @media screen and (min-width:1024px) {
+/*---NAVIGATION------------------------------*/
+.mysite-Navigation {
+  &-logo {
+    width: 8rem;
+  }
+}
+  .mysite-Navigation-menu > ul:nth-child(1) {
+    font-size: 1.8rem;
+    gap: 2.8rem;
+  }
+    .wrapper {
+      width: min(112rem, 100%);
+    }
+    .mysite-Navigation-menu {
+      width: 65%;
+    }
+/*---HOME------------------------------*/
+    .mysite-Home {
+      display: grid;
+      // height: 100vh;
+      align-content: center;
+      grid-template: "description img" / 1fr 1fr;
+      align-content: center;
+      &-container {
+        grid-area: description;
+        align-self: center;
+        margin: 0;
+        &-header > h1 {
+          font-size: 6.6rem;
+        }
+        & > p {
+          font-size: 2rem;
+        }
+        &-buttons a {
+          font-size: 2rem;
+        }
+      }
+      &-illustration {
+        max-width: 100%;
+        grid-area: img;
+      }
+    }
+/*---ABOUT------------------------------*/
+    .mysite-About {
+      display: grid;
+      gap: 3.5rem;
+      align-content: center;
+      grid-template: "img description" / 1fr 1fr;
+      &-illustration {
+        display: block;
+        grid-area: img;
+      }
+      &-container {
+        margin: 0;
+        align-self: center;
+        grid-area: description;
+        & > h2 {
+          font-size: 5.6rem;
+        }
+        & > p {
+          font-size: 2rem;
+        }
+      }
+    }
+/*---WORKS------------------------------*/
+.mysite-Works {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  & h2 {
+    font-size: 5.6rem;
+  }
+  &-links {
+    gap: .5rem;
+    row-gap: 1.5rem;
+    &-img {
+      max-width: 34.8rem;
+    }
+  }
+}
+    .mysite-Home, 
+    .mysite-About, 
+    .mysite-Works {
+      height: 100vh;
+    }
+  }

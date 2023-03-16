@@ -22,8 +22,7 @@ function openMenu() {
    };
   }
 
-
-
+//------ WRITING EFFECT --------
 let i = 0;
 const tag = document.querySelector("h1");
 const html = document.querySelector("h1").innerHTML;
@@ -38,8 +37,8 @@ function typeWriter() {
 		setTimeout(typeWriter, speed);
 	}
 }
-
 typeWriter();
+
 
 ScrollReveal({
 		origin: 'top',
