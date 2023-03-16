@@ -13,17 +13,17 @@
 </head>
 <body class="mysite">
   <nav class="mysite-Navigation">
-    <div class="wrapper">
+    <div class="wrapper" style="border: 1px solid red;">
       <figure class="mysite-Navigation-logo">
         <a href="#"><img src="./assets/logo.svg"></a>
       </figure>
       <div class="mysite-Navigation-menu">
-        <ul class="mysite-Navigation-links">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Sobre mim</a></li>
-          <li><a href="#">Portfólio</a></li>
-        </ul>
-        <ul class="mysite-Navigation-social">
+          <ul class="mysite-Navigation-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Sobre mim</a></li>
+            <li><a href="#">Portfólio</a></li>
+          </ul>
+          <ul class="mysite-Navigation-social">
             <li>
               <a href="#">
                 <img src="./assets/linkedin.svg" alt="Logo Linkedin">
@@ -42,11 +42,11 @@
           </ul>
         </div>
         <div class="mysite-Navigation-hamburger">
-          <input class="checkbox" type="checkbox" onclick="openMenu()">
+          <input type="checkbox" onclick="openMenu()">
           <div class="mysite-Navigation-hamburger-rows">
-            <span class="row"></span>
-            <span class="row"></span>
-            <span class="row"></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
    </div>
@@ -54,9 +54,9 @@
   <main class="mysite-Home">
       <div class="wrapper">
         <div class="mysite-Home-illustration">
-          <picture>
+          <figure>
             <img src="./assets/working.svg" alt="Ilustração de uma pessoa programando">
-          </picture>
+          </figure>
         </div>
         <div class="mysite-Home-container">
           <header class="mysite-Home-container-header">
@@ -64,11 +64,10 @@
 Web Developer</h1>
             </header>
         <p>
-          Profissional responsável pelo desenvolvimento de aplicações web.
-          Essas aplicações web são desenvolvidas por meio de linguagens, essas linguagens são interpretadas por navegadores, para apresentar uma página da web.
+          Profissional responsável pelo desenvolvimento de aplicações web. Conhecido como desenvolvedor web ou web developer. Ele é responsável por projetar, desenvolver e manter aplicações web que possam ser acessadas por meio de um navegador.
         </p>
         <ul class="mysite-Home-container-buttons">
-          <li><a href="#" class="button">Ver Projetos</a></li>
+          <li><a href="#">Ver Projetos</a></li>
           <li>
             <a href="#">
               Ler Sobre Mim
@@ -85,23 +84,39 @@ Web Developer</h1>
   <section class="mysite-About">
     <div class="wrapper">
       <div class="mysite-About-illustration">
-        <picture>
+        <figure>
           <img src="./assets/people.svg" alt="Ilustração de uma pessoa">
-        </picture>
+        </figure>
       </div>
       <div class="mysite-About-container">
         <h2>Sobre mim</h2>
         <p>
-          Me chamo João Victor, tenho 20 anos e sou iniciante em programação. Ao entrar no ensino médio tive a oportunidade de fazer um curso de informática por três anos na escola, onde estudei um conteúdo bem abrangente de tecnologia. E foi este curso que despertou meu interesse pela programação, atualmente estudo por conta própria buscando desafios e oportunidades para tentar desenvolver meus conhecimentos.
+          Olá, me chamo João Victor, sou um entusiasta em programação, atualmente estou focando meus estudos
+          em desenvolvimento web. Meu trabalho é projetar e desenvolver a interface do usuário de um site ou aplicativo.
+          As linguagens utilizadas para desenvolver aplicações web incluem HTML, CSS e JavaScript.
+          O HTML é a linguagem de marcação utilizada para estruturar o conteúdo da página web. 
+          O CSS é utilizado para estilizar a página, incluindo as cores, fontes e layouts.
+           Já o JavaScript é utilizado para adicionar interatividade à página, permitindo que o usuário interaja com elementos da página.
         </p>
-        <h3>Html & CSS</h3>
-        <p>
-          HTML e CSS são linguagens base para construção de páginas web, é com elas que fazemos a estrutura e a estilização da página.
-        </p>
-        <h3>JavaScript</h3>
-        <p>
-          Sua função nas páginas web é garantir que essas páginas sejam interativas, tenham funcionalidades. Com ela comportamentos com efeitos visuais e quaisquer outras experiências de usuário são possiveis.
-        </p>
+        <div class="mysite-About-container-social">
+          <ul>
+            <li>
+              <a href="#">
+                <img src="./assets/linkedin.svg" alt="Logo Linkedin">
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img src="./assets/github.svg" alt="Logo Github">
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img src="./assets/instagram.svg" alt="Logo Instagram">
+              </a>
+            </li>
+          </ul> 
+        </div>
       </div>
     </div>
   </section>

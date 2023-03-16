@@ -9,6 +9,10 @@
 :root {
   font-size: 62.5%;
   --nav-height: 7rem;
+  --hue: 94;
+  --primary-color: hsl(var(--hue), 67%, 95%);
+  --secondary-color: hsl(var(--hue), 16%, 8%);
+  --white: hsl(0, 0%, 100%);
 }
 
 html {
@@ -18,7 +22,7 @@ html {
 body {
   font-family: "Josefin Slab", sans-serif;
   font-size: 1.6rem;
-  background-color: #F2FBEB;
+  background-color: var(--primary-color);
 }
 
 .wrapper {
@@ -31,6 +35,7 @@ img {
   max-width: 100%;
 }
 
+/*---SCROLL BAR EFFECT------------------------------*/
 .scroll {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(7px);
@@ -40,6 +45,7 @@ img {
 /*---NAVIGATION------------------------------*/
 .mysite-Navigation {
   display: flex;
+  align-items: center;
   position: fixed;
   width: 100vw;
   height: var(--nav-height);
@@ -50,70 +56,59 @@ img {
 .mysite-Navigation-logo {
   width: 7rem;
 }
-.mysite-Navigation-open, .mysite-Navigation-close {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
 .mysite-Navigation .wrapper {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
 /*---MENU EXPANDED------------------------------*/
-body.menu-expanded {
+.mysite.menu-expanded {
   overflow: hidden;
 }
-
-body.menu-expanded > :not(nav) {
+.mysite.menu-expanded > :not(nav) {
   visibility: hidden;
 }
 
-.mysite-Navigation-menu,
-.mysite-Navigation-close,
-body.menu-expanded .mysite-Navigation-open {
+.mysite-Navigation-menu {
   opacity: 0;
   visibility: hidden;
+  transform: translateX(-100%);
+}
+.mysite-Navigation-menu > ul:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  font-family: "Josefin Sans";
+  font-style: normal;
+  margin-top: 6rem;
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+}
+.mysite-Navigation-menu li a {
+  color: var(--secondary-color);
 }
 
-body.menu-expanded .mysite-Navigation-menu,
-body.menu-expanded .mysite-Navigation-close {
+.mysite.menu-expanded .mysite-Navigation-menu {
   opacity: 1;
   visibility: visible;
 }
 
-.mysite-Navigation-menu {
-  transform: translateX(-100%);
-}
-
-body.menu-expanded .mysite-Navigation-menu {
+.mysite.menu-expanded .mysite-Navigation-menu {
   top: 0;
   left: 0;
-  background-color: #F2FBEB;
+  background-color: var(--primary-color);
   width: 100vw;
   height: 100vh;
-  padding-top: 100px;
+  padding-top: 10rem;
   transition: transform 0.5s;
   transform: translateX(0%);
 }
 
 .mysite-Navigation-logo {
   z-index: 100;
-}
-
-.mysite-Navigation-menu ul:nth-child(1) {
-  display: flex;
-  flex-direction: column;
-  gap: 4.8rem;
-  margin-top: 6rem;
-  font-weight: 700;
-  font-size: 2.4rem;
-  line-height: 3.1rem;
-}
-
-.mysite-Navigation-menu li a {
-  color: #000;
 }
 
 .mysite-Navigation-social {
@@ -124,14 +119,12 @@ body.menu-expanded .mysite-Navigation-menu {
   margin-top: 7rem;
 }
 
-body.menu-expanded .my-Navigation-logo,
-body.menu-expanded button {
+.mysite.menu-expanded .mysite-Navigation-logo {
   position: relative;
   z-index: 100;
 }
 
-nav .mysite-Navigation-menu,
-nav .mysite-Navigation-close {
+.mysite-Navigation .mysite-Navigation-menu {
   position: fixed;
 }
 
@@ -146,12 +139,12 @@ nav .mysite-Navigation-close {
   flex-direction: column;
   justify-content: space-between;
 }
-.mysite-Navigation-hamburger-rows .row {
+.mysite-Navigation-hamburger-rows > span {
   display: block;
   height: 0.3rem;
   width: 100%;
   border-radius: 1rem;
-  background-color: #000;
+  background-color: var(--secondary-color);
 }
 .mysite-Navigation-hamburger-rows span:first-child {
   transform-origin: 0% 0%;
@@ -164,7 +157,7 @@ nav .mysite-Navigation-close {
   transform-origin: 0% 100%;
   transition: transform 0.4s ease-in-out;
 }
-.mysite-Navigation-hamburger .checkbox {
+.mysite-Navigation-hamburger > input {
   position: absolute;
   display: block;
   width: 100%;
@@ -194,7 +187,7 @@ nav .mysite-Navigation-close {
   margin-inline: auto;
 }
 .mysite-Home-container {
-  margin-block: 2.5rem 9rem;
+  margin-block: 2.5rem 20rem;
 }
 .mysite-Home-container-header > h1 {
   font-family: "Josefin Sans";
@@ -219,8 +212,8 @@ nav .mysite-Navigation-close {
   font-weight: 400;
   display: block;
   text-align: center;
-  background-color: #171219;
-  color: #fff;
+  background-color: var(--secondary-color);
+  color: var(--white);
   padding-block: 1.5rem;
   border-radius: 4rem;
   transition: 350ms;
@@ -238,7 +231,7 @@ nav .mysite-Navigation-close {
   gap: 1rem;
   font-family: "Josefin Sans";
   font-weight: 400;
-  color: #000;
+  color: var(--secondary-color);
   transition: 350ms;
 }
 .mysite-Home-container-buttons li:last-child > a:hover {
@@ -246,35 +239,38 @@ nav .mysite-Navigation-close {
   transform: translate(0, 2px);
 }
 
+/*---ABOUT------------------------------*/
 .mysite-About-illustration {
   display: none;
 }
 .mysite-About-container {
-  margin-bottom: 15rem;
+  margin-bottom: 20rem;
+}
+.mysite-About-container-social > ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 .mysite-About-container > h2 {
   font-family: "Josefin Sans";
   font-weight: 400;
-  font-size: 4.2rem;
+  font-size: 3.2rem;
   line-height: 110%;
 }
 .mysite-About-container > p {
   font-family: "Josefin Slab";
   font-weight: 600;
   line-height: 150%;
-  padding-block: 2rem;
-}
-.mysite-About-container > h3 {
-  font-family: "Josefin Sans";
-  font-weight: 400;
-  font-size: 1.8rem;
-  line-height: 110%;
+  padding-block: 1rem;
 }
 
+/*---WORKS------------------------------*/
 .mysite-Works h2 {
   font-family: "Josefin Sans";
   font-weight: 400;
-  font-size: 4.1rem;
+  font-size: 3.2rem;
   line-height: 150%;
   text-align: center;
   margin-bottom: 4rem;
@@ -286,7 +282,7 @@ nav .mysite-Navigation-close {
   gap: 0.5rem;
 }
 .mysite-Works-links-img {
-  width: 50rem;
+  max-width: 50rem;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -299,8 +295,8 @@ nav .mysite-Navigation-close {
   position: absolute;
   bottom: 0;
   padding: 1rem 2rem;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--secondary-color);
+  color: var(--white);
   border: none;
   border-radius: 3rem;
   font-weight: 700;
@@ -325,10 +321,11 @@ nav .mysite-Navigation-close {
   margin: auto;
 }
 
+/*---CURSOR ANIMATION------------------------------*/
 .mysite-Home-container-header > h1:after {
   content: "";
   display: inline-block;
-  background-color: black;
+  background-color: var(--secondary-color);
   margin-left: 2px;
   height: 25px;
   width: 3px;
@@ -347,5 +344,44 @@ nav .mysite-Navigation-close {
   }
   100% {
     opacity: 0;
+  }
+}
+/*---MEDIA-QUERY------------------------------*/
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: min(60rem, 100%);
+  }
+  /*---NAVIGATION------------------------------*/
+  .mysite-Navigation-hamburger {
+    display: none;
+  }
+  .mysite-Navigation-menu {
+    all: initial;
+    display: flex;
+    align-items: center;
+  }
+  .mysite-Navigation-menu > ul:nth-child(1) {
+    flex-direction: row;
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  .mysite-Navigation-social {
+    gap: 1.6rem;
+    margin: 0;
+  }
+  .mysite-Navigation .mysite-Navigation-menu {
+    position: initial;
+  }
+  /*---HOME------------------------------*/
+  .mysite-Home-container-buttons {
+    flex-direction: row;
+    align-items: center;
+  }
+  .mysite-Home-container-buttons li:first-child > a {
+    padding-inline: 2rem;
+  }
+  /*---WORKS------------------------------*/
+  .mysite-Works-links-img {
+    max-width: 26.5rem;
   }
 }/*# sourceMappingURL=styles.css.map */

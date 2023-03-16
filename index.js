@@ -24,28 +24,27 @@ function openMenu() {
 
 
 
-		var i = 0;
-		var tag = document.querySelector("h1");
-		var html = document.querySelector("h1").innerHTML;
-		var attr = tag.setAttribute("data", html);
-    console.log(attr);
-		var txt = tag.getAttribute("data");
-		var speed = 170;
+let i = 0;
+const tag = document.querySelector("h1");
+const html = document.querySelector("h1").innerHTML;
+tag.setAttribute("data", html);
+const txt = tag.getAttribute("data");
+let speed = 170;
 
-		function typeWriter() {
-		  if (i <= txt.length) {
-		    document.querySelector("h1").innerHTML = txt.slice(0 , i + 1);
-		    i++;
-		    setTimeout(typeWriter, speed);
-		  }
-		}
+function typeWriter() {
+	if (i <= txt.length) {
+		document.querySelector("h1").innerHTML = txt.slice(0 , i + 1);
+		i++;
+		setTimeout(typeWriter, speed);
+	}
+}
 
 typeWriter();
 
 ScrollReveal({
 		origin: 'top',
     distance: '30px',
-    duration: 1000,
+    duration: 700,
 	}).reveal(`
 		.mysite-Navigation, 
 		.mysite-Home, 
