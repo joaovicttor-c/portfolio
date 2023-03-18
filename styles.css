@@ -176,13 +176,13 @@ img {
   opacity: 0;
   cursor: pointer;
 }
-.mysite-Navigation-hamburger input[type=checkbox]:checked ~ .mysite-Navigation-hamburger-rows span:first-child {
+.mysite-Navigation-hamburger .animation-menu ~ .mysite-Navigation-hamburger-rows span:first-child {
   transform: rotate(45deg);
 }
-.mysite-Navigation-hamburger input[type=checkbox]:checked ~ .mysite-Navigation-hamburger-rows span:nth-child(2) {
+.mysite-Navigation-hamburger .animation-menu ~ .mysite-Navigation-hamburger-rows span:nth-child(2) {
   transform: scaleY(0);
 }
-.mysite-Navigation-hamburger input[type=checkbox]:checked ~ .mysite-Navigation-hamburger-rows span:last-child {
+.mysite-Navigation-hamburger .animation-menu ~ .mysite-Navigation-hamburger-rows span:last-child {
   transform: rotate(-45deg);
 }
 

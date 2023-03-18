@@ -14,13 +14,21 @@ showNavOnScroll()
 
 //------ MENU EXPANDED --------
 const body = document.querySelector(".mysite");
+const input = document.querySelector(".mysite-Navigation-hamburger").firstElementChild;
 function openMenu() {
   if(body.matches(".menu-expanded")) {
     body.classList.remove("menu-expanded"); 
+		input.classList.remove("animation-menu");
    } else {
     body.classList.add("menu-expanded");
+		input.classList.add("animation-menu");
    };
-  }
+  };
+
+	function removeMenuOnClick() {
+		body.classList.remove("menu-expanded");
+		input.classList.remove("animation-menu");
+	};
 
 //------ WRITING EFFECT --------
 let i = 0;
@@ -57,3 +65,13 @@ ScrollReveal({
 
 ScrollReveal().reveal('.mysite-Home-container > p', {delay: 500})
 ScrollReveal().reveal('.mysite-Home-container-buttons > li', {delay: 800})
+
+// Remove menu-expanded em tamanhos de tela maior que 768px;
+window.addEventListener('resize', windowResize);
+function windowResize() {
+	let windowWidth = window.innerWidth;
+	if(windowWidth >= 768) {
+		body.classList.remove("menu-expanded");
+		input.classList.remove("animation-menu");
+	};
+};

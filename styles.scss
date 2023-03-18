@@ -186,13 +186,13 @@ img {
       opacity: 0;
       cursor: pointer;
   }
- & input[type="checkbox"]:checked ~ &-rows span:first-child {
+ & .animation-menu ~ &-rows span:first-child {
   transform: rotate(45deg);
  } 
- & input[type="checkbox"]:checked ~ &-rows span:nth-child(2) {
+ & .animation-menu ~ &-rows span:nth-child(2) {
   transform: scaleY(0);
  }
- & input[type="checkbox"]:checked ~ &-rows span:last-child {
+ & .animation-menu ~ &-rows span:last-child {
   transform: rotate(-45deg);
  }
 }
