@@ -15,20 +15,15 @@ showNavOnScroll()
 //------ MENU EXPANDED --------
 const body = document.querySelector(".mysite");
 const input = document.querySelector(".mysite-Navigation-hamburger").firstElementChild;
-function openMenu() {
-  if(body.matches(".menu-expanded")) {
-    body.classList.remove("menu-expanded"); 
-		input.classList.remove("animation-menu");
-   } else {
-    body.classList.add("menu-expanded");
-		input.classList.add("animation-menu");
-   };
-  };
 
-	function removeMenuOnClick() {
-		body.classList.remove("menu-expanded");
-		input.classList.remove("animation-menu");
-	};
+function removeMenuOnClick() {
+	body.classList.remove("menu-expanded");
+	input.classList.remove("animation-menu");
+};
+function openMenu() {
+	body.classList.toggle("menu-expanded");
+	input.classList.toggle("animation-menu");
+}
 
 //------ WRITING EFFECT --------
 let i = 0;
